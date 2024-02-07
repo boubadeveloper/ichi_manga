@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@500;600;900&family=Poppins:wght@400;600;700;800&display=swap");
+
+:root {
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "Merienda", cursive;
+    --color-white: #f1f1f1;
+    --color-red: #c21c31;
+    --color-black: #000;
+    --color-dark: #242529;
+    --color-grey: #f2f2f2;
+    --color-red-2: #850f1f;
+
+  }

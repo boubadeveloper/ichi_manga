@@ -1,0 +1,76 @@
+/* TABLEAU DE BORD */
+
+.card {
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    color: #343a40;
+  }
+  
+  .btn-outline-primary {
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+  }
+  
+  .btn-outline-primary:hover {
+    color: #fff;
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+  }
+  
+  .navbar-nav .nav-link {
+    color: var(--color-dark);
+  }
+  
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--color-grey); */
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    color: #343a40;
+  }
+  
+  .btn-outline-primary {
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+  }
+  
+  .btn-outline-primary:hover {
+    color: var(--color-grey);
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+  }
+  
+  .btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-outline-danger:hover {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  .logo-admin
+  {
+    width: 150px;
+  }

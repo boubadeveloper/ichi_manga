@@ -1,0 +1,118 @@
+/* header */
+#header {
+    background-image: url("../uploads/banniere.webp");
+    height: 100vh;
+    
+    display: flex;
+    align-items: end;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 1px;
+    
+  }
+  .title-principal
+  {
+    font-family: var(--font-secondary);
+    font-weight: 900;
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 3rem;
+    color: var(--color-red);
+    text-shadow: 0 4px 10px var(--color-black);
+  }
+  @media screen and (max-width: 850px) {
+    .title-principal
+    {
+        font-size: 50px;
+    }
+    #header
+    {
+      height: 650px;
+      min-height: auto;
+    }
+    
+  }
+  @media screen and (max-width: 500px) {
+    .title-principal
+    {
+        font-size: 45px;
+    }
+    #header
+    {
+      height: 650px;
+      min-height: auto;
+    }
+    
+  }
+
+
+  .card-text , .card-title
+{
+  text-align: center;
+  
+}
+.card:hover {
+  box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.1); /* Ombre au survol */
+  transition: box-shadow 0.3s ease-in-out; /* Transition en douceur */
+}
+.card
+{
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-card .card-body {
+  text-align: center;
+}
+.card-text
+{
+  font-size: 0.8rem;
+}
+/* category */
+#category_banner
+{
+  background-color: var(--color-red-2);
+  color: var(--color-white);
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+.hide
+{
+  display: none;
+}
+/* SYSTEME FILTRE */
+.active-filter-btn,
+.active-filter-btn:active,
+.active-filter-btn:focus {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Ajouter une transition */
+}
+
+.active-filter-btn:hover {
+    background-color: var(--color-red-2);
+    color: var(--color-white);
+}

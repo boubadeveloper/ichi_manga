@@ -1,0 +1,85 @@
+.card-text , .card-title
+{
+  text-align: center;
+  
+}
+.card:hover {
+  box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.1); /* Ombre au survol */
+  transition: box-shadow 0.3s ease-in-out; /* Transition en douceur */
+}
+.card
+{
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+
+
+.title h2::before
+{
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 4px;
+  background-color: var(--color-red);
+  top: 150%;
+  left: 20%;
+  transform: translateY(-50%);
+  border-radius: 20px;
+}
+
+.active-filter-btn,
+.active-filter-btn:active,
+.active-filter-btn:focus {
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Ajouter une transition */
+}
+
+.active-filter-btn:hover {
+    background-color: var(--color-red-2);
+    color: var(--color-white);
+}
+
+/* fiche produit */
+
+.product-card {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-card .card-body {
+  text-align: center;
+}
+.card-text
+{
+  font-size: 0.8rem;
+}
+/* category */
+#category_banner
+{
+  background-color: var(--color-red-2);
+  color: var(--color-white);
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+.hide
+{
+  display: none;
+}

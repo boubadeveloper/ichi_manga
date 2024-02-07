@@ -1,0 +1,92 @@
+
+
+#login
+{
+    font-family: var(--font-primary);
+    
+}
+
+h5
+{
+    
+    
+    font-family: var(--font-secondary);
+    color: var(--font-secondary);
+}
+.page-login
+{
+  background-color: var(--color-dark);
+}
+
+
+.form-outline  input
+{
+    background-color: var(--color-grey);
+    box-shadow: none;
+    border: none;
+}   
+.form-outline  input:focus
+{
+   box-shadow: none!important;
+   background-color: var(--color-grey);
+}
+
+
+
+
+
+.links
+{
+    text-decoration: none;
+    color: var(--color-red);
+}
+.form-control::placeholder
+{
+    font-size: 1rem;
+}
+
+/* Style de base pour le formulaire */
+#add-member-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le logo */
+.logo-form {
+    width: 100px; 
+    height: auto;
+    
+}
+
+
+
+/* Style pour les champs de saisie */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style pour le bouton */
+input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-red); /* Couleur du bouton */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--color-red); /* Couleur du bouton au survol */
+}

@@ -1,0 +1,19 @@
+footer {
+    background-color: #f8f9fa; /* Couleur de fond du footer */
+    padding: 20px 0; /* Espacement intérieur du footer */
+    flex-shrink: 0;
+    border-top: 1px dashed var(--color-white);
+    width: 100%;
+    
+  }
+  footer li a {
+    color: #f1f1f1;
+  }
+  .bottom-page
+  {
+    border-top: 1px dashed var(--color-white);
+  }
+  .img-luffy
+  {
+    width: 250px;
+  }

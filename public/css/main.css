@@ -1,0 +1,64 @@
+@import url('navbar.css');
+@import url('footer.css');
+@import url('home_page.css');
+@import url('card-product.css');
+@import url('product_management.css');
+@import url('form.css');
+@import url('add_product.css');
+@import url('register.css');
+@import url('typography.css');
+@import url('dashboard.css');
+@import url('all_members.css');
+@import url('contact.css');
+
+
+
+
+
+  *, ::before , ::after
+  {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none!important;
+      
+  }
+  .logo-form
+  {
+    width: 130px;
+  }
+li
+{
+    list-style: none;
+}
+body {
+    min-height: 100vh; /* Hauteur minimale du corps égale à 100% de la hauteur de la fenêtre */
+    margin: 0; /* Supprime la marge par défaut du corps */
+    display: flex;
+    flex-direction: column; /* Utiliser une disposition en colonne pour empiler les éléments */
+    width: 100%;
+    
+}
+html
+{
+    overflow-x: hidden;
+}
+.content {
+    flex: 1; /* Permet au contenu de s'étirer pour occuper tout l'espace disponible */
+    
+}
+
+/* Styles spécifiques au footer (à personnaliser selon vos besoins) */
+footer {
+    background-color: var(--color-white);
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.product-image
+{
+    max-width: 80px;
+    height: auto;
+}

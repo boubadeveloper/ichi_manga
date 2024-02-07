@@ -1,0 +1,6 @@
+/* Style personnalisé pour la table responsive */
+.table-responsive-custom {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  

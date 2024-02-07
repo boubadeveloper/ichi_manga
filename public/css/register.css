@@ -1,0 +1,70 @@
+.form-control:focus:not(.form-outline)
+{
+    outline: none;
+}
+#login
+{
+    font-family: var(--font-primary);
+    
+}
+.logo-ichimanga
+{
+    width: 150px;
+}
+h5
+{
+    
+    
+    font-family: var(--font-secondary);
+    color: var(--font-secondary);
+}
+.page-login
+{
+  background-color: var(--color-dark);
+}
+
+
+.form-outline  input
+{
+    background-color: var(--color-grey);
+    box-shadow: none;
+    border: none;
+}   
+.form-outline  input:focus
+{
+   box-shadow: none!important;
+   background-color: var(--color-grey);
+}
+.social-media
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    align-items: center;
+    column-gap: 1rem;
+}
+.social-media a
+{
+    
+    color: var(--color-dark);
+    text-align: center;
+    transition: 0.2s ease;
+    object-fit: contain;
+}
+
+
+.social-media a:hover
+{
+    color: var(--color-red);
+}
+
+.links
+{
+    text-decoration: none;
+    color: var(--color-red);
+}
+.form-control::placeholder
+{
+    font-size: 1rem;
+}

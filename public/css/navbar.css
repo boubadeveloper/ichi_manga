@@ -1,0 +1,58 @@
+.icons-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .icons-navigation .icon {
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+  .nav-top {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-link , .nav-link  {
+    transition: all 0.5s ease;
+  }
+  .nav-link:hover {
+    color: var(--color-red) !important;
+   font-weight: 600;
+   font-size: 1.1rem;
+  }
+  .dropdown-item:hover
+  {
+    background-color: var(--color-red);
+    color: var(--color-white);
+  }
+  .navbar {
+    padding: 0;
+  }
+  
+  @media screen and (min-width: 200px) {
+    .logo {
+      width: 4rem;
+    }
+  }
+  
+  
+  
+  
+  .nav-item {
+    border-bottom: none;
+  }
+  .navbar-toggler-icon {
+    position: relative;
+    left: 47%;
+    color: black;
+  }
+  .navbar-toggler {
+    border: none; /* Enlève la bordure du bouton du menu burger */
+    outline: none; /* Supprime la bordure lorsque le bouton est en focus (pour des raisons d'accessibilité) */
+  }
+  /* Styles pour le bouton lorsque le menu est ouvert (état de focus) */
+  .navbar-toggler:focus {
+    box-shadow: none; /* Enlève la bordure d'ombre lorsqu'il est en focus */
+  }

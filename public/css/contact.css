@@ -1,0 +1,24 @@
+#submitButton
+{
+    background-color: var(--color-red-2);
+    color: var(--color-white);
+    cursor: pointer;
+}
+#submitButton:hover
+{
+    background-color: var(--color-red);
+}
+.form-floating .form-control
+{
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid var(--color-dark);
+    border-radius: 0;
+}
+.form-floating .form-control.clicked
+{
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid var(--color-red);
+    border-radius: 0;
+}
