@@ -240,11 +240,13 @@ function handle_product_modification($pdo, $product) {
     // Initialisation du chemin de l'image à vide
     $image_path = "";
 
+    // Récupération de l'image convertie en WebP
+    $image_path = getImage($_FILES["image"], $_POST["image_url"]);
+
     // Traitement de l'image du produit
-    if (!empty($_FILES["image"]["tmp_name"])) {
-        $image_path = handle_uploaded_image($_FILES["image"]);
-    } elseif (!empty($_POST["image_url"])) {
-        $image_path = htmlspecialchars(strip_tags($_POST["image_url"]));
+    if ($image_path === false) {
+        // Gestion de l'erreur si le traitement de l'image échoue
+        die("Erreur lors du traitement de l'image.");
     }
 
     // Appel de la fonction updateProduct() avec les données correctes
@@ -255,6 +257,7 @@ function handle_product_modification($pdo, $product) {
     header('Location: show_products');
     exit(); // Assure que le script s'arrête après la redirection
 }
+
 
 function handle_uploaded_image($image) {
     // Chemin du répertoire "uploads/"
