@@ -65,7 +65,7 @@
                                 <td>
                                     <?= $product['stock']; ?>
                                 </td>
-                                <td><a href='index.php?action=product_modify&id=<?= $product['id'] ?>' class='btn btn-dark btn'>Modifier</a>
+                                <td><a href='index.php?action=modify_product&id=<?= $product['id'] ?>' class='btn btn-dark btn'>Modifier</a>
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"

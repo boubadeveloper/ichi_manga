@@ -26,10 +26,10 @@ switch ($action) {
     case 'delete_product':
         require_once 'controllers/productController.php';
         delete_product_action();
-    case 'product_modify':
+    case 'modify_product':
         require_once 'controllers/productController.php';
-        update_product_action();
-        include_once 'views/admin/product_modify.php';
+        modify_product_controller();
+        
         break;
     case 'contact':
         include 'contact.php';

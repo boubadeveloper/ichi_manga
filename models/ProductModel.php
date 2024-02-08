@@ -97,6 +97,23 @@ function updateProduct($productId, $category, $image, $name, $description, $pric
    
 }
 
+function getProductById($pdo, $productId) {
+    try {
+        // Préparation de la requête SQL pour récupérer les détails du produit avec l'identifiant spécifié
+        $stmt = $pdo->prepare("SELECT * FROM products WHERE id = :id");
+        // Liaison du paramètre :id à la valeur de $productId
+        $stmt->bindParam(':id', $productId);
+        // Exécution de la requête
+        $stmt->execute();
+        // Récupération du résultat sous forme de tableau associatif
+        $product = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Retourner le produit ou null s'il n'existe pas
+        return $product;
+    } catch (PDOException $error) {
+        // Gérer les erreurs de requête SQL
+        throw new Exception("Erreur lors de la récupération du produit : " . $error->getMessage());
+    }
+}
 
 
 

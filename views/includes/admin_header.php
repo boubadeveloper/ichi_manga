@@ -1,3 +1,9 @@
+<?php 
+$title = $title ?? "Ichi Manga";
+$desc = $desc ?? "Bienvenue sur Ichi-manga STORE, votre source ultime pour les figurines, cartes et goodies. Découvrez nos collections uniques";
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
