@@ -19,6 +19,18 @@ switch ($action) {
         require_once 'controllers/productController.php';
         render_products_product_getAll();
         break;
+    case 'add_product':
+        require_once 'controllers/productController.php';
+        render_products_product_add();
+        break;
+    case 'delete_product':
+        require_once 'controllers/productController.php';
+        delete_product_action();
+    case 'product_modify':
+        require_once 'controllers/productController.php';
+        update_product_action();
+        include_once 'views/admin/product_modify.php';
+        break;
     case 'contact':
         include 'contact.php';
         break;

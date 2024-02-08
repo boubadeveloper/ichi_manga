@@ -6,15 +6,24 @@ function addProduct($products)
 {
     global $pdo;
     try {
-        $stmt = $pdo->prepare("INSERT INTO products (category_id, image, name, description, price, stock) VALUES (:category, :image, :name, :description, :price, :stock)");
+        // Préparer la requête d'insertion
+        $stmt = $pdo->prepare("INSERT INTO products (category, image, name, description, price, stock) VALUES (:category, :image, :name, :description, :price, :stock)");
+
+        // Sécuriser les données du formulaire
+        $category = htmlspecialchars(strip_tags($products['product_category']));
+        $name = htmlspecialchars(strip_tags($products['product_name']));
+        $description = htmlspecialchars(strip_tags($products['product_description']));
+        $price = floatval($products['product_price']);
+        $stock = intval($products['product_stock']);
+        $image = $products['product_image'];
 
         // Liaison des paramètres
-        $stmt->bindParam(':category', $products['product_category']);
-        $stmt->bindParam(':image', $products['product_image']);
-        $stmt->bindParam(':name', $products['product_name']);
-        $stmt->bindParam(':description', $products['product_description']);
-        $stmt->bindParam(':price', $products['product_price']);
-        $stmt->bindParam(':stock', $products['product_stock']);
+        $stmt->bindParam(':category', $category);
+        $stmt->bindParam(':image', $image);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':stock', $stock);
 
         $stmt->execute();
         return $stmt->rowCount();
@@ -23,6 +32,7 @@ function addProduct($products)
         throw new Exception('Erreur lors de l\'ajout du produit: ' . $error->getMessage());
     }
 }
+
 
 // AFFICHER TOUS LES PRODUITS
 
@@ -62,33 +72,45 @@ function deleteProduct($productId)
 
 // MODIFICATION DU PRODUIT
 
-function updateProduct($productId, $category, $image, $name, $description, $price, $stock)
-{
+function updateProduct($productId, $category, $image, $name, $description, $price, $stock) {
     global $pdo;
     try {
-        $stmt = $pdo->prepare("UPDATE products SET category_id = :category, image = :image, name = :name, description = :description, price = :price, stock = :stock WHERE id = :id");
+        // Préparation de la requête de mise à jour
+        $stmt = $pdo->prepare("UPDATE products SET category = :category, image = :image, name = :name, description = :description, price = :price, stock = :stock WHERE id = :id");
 
-        $stmt->bindParam(':category', $category);
-        $stmt->bindParam(':image', $image);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':description', $description);
-        $stmt->bindParam(':price', $price);
-        $stmt->bindParam(':stock', $stock);
-        $stmt->bindParam(':id', $productId);
+        // Liaison des paramètres
+        $stmt->bindParam(':id', $productId);                 // Associe l'ID du produit au paramètre :id
+        $stmt->bindParam(':category', $category);             // Associe la catégorie du produit au paramètre :category
+        $stmt->bindParam(':image', $image);                   // Associe l'image du produit au paramètre :image
+        $stmt->bindParam(':name', $name);                     // Associe le nom du produit au paramètre :name
+        $stmt->bindParam(':description', $description);       // Associe la description du produit au paramètre :description
+        $stmt->bindParam(':price', $price);                   // Associe le prix du produit au paramètre :price
+        $stmt->bindParam(':stock', $stock);                   // Associe le stock du produit au paramètre :stock
 
+        // Exécution de la requête
         $stmt->execute();
-        return $stmt->rowCount();
+
+        return true;
     } catch (PDOException $error) {
-        throw new Exception('Erreur lors de la mise à jour du produit : ' . $error->getMessage());
+        return false;
     }
+   
 }
+
+
+
+
+
+
+    
+
 
 // DANS LE FRONT END AFFICHER LES CATEGORIES
 
 function get_product_categories() {
     
     global $pdo;
-    $categoriesStmt = $pdo->query("SELECT DISTINCT category_id FROM products");
+    $categoriesStmt = $pdo->query("SELECT DISTINCT category FROM products");
 
   
     $categories = $categoriesStmt->fetchAll(PDO::FETCH_ASSOC);
