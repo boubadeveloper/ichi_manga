@@ -1,0 +1,16 @@
+.circle-icon {
+    width: 200px; /* Définir la taille du cercle */
+    height: 200px;
+    border-radius: 50%; /* Arrondir le cercle */
+    background-color: #007bff; /* Couleur de fond */
+    color: #ffffff; /* Couleur de l'icône */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px; /* Marge entre les cercles */
+}
+
+.circle-icon img {
+    width: 100%;
+    height: auto;
+}

@@ -32,7 +32,9 @@ h5
 }
 
 
-
+.description-textarea {
+    overflow: hidden;
+}
 
 
 .links

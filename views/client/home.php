@@ -12,7 +12,6 @@
 </header>
 
 
-
 <section id="collection">
     <section class="container py-5">
         <div class="py-5 bg-dark text-white">
@@ -54,7 +53,7 @@
                                 <?= $product['name'] ?>
                             </h5>
                             <p class="card-text text-center pt-2">
-                                <?= substr($product['description'], 0, 150) ?>...
+                                <?= substr($product['description'], 0, 50) ?>...
                             </p>
                             <!-- Product price-->
                             <p class="text-muted text-center h5 fw-bold pb-2">

@@ -33,7 +33,7 @@ function render_products_product_getAll()
 
 // Fonction pour télécharger l'image
 
-function getImage($imageData, $imageUrl) {
+function getImage($imageData) {
     $uploadDir = 'public/uploads/';
 
     // Si une image est téléchargée
@@ -45,8 +45,8 @@ function getImage($imageData, $imageUrl) {
         $tabExtension = explode('.', $name);
         $extension = strtolower(end($tabExtension));
 
-        $webpExtensions = ['jpg', 'jpeg', 'png', 'gif'];
-        $maxSize = 400000;
+        $webpExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+        $maxSize = 4000000;
 
         // Vérification des conditions pour le téléchargement
         if (in_array($extension, $webpExtensions) && $size <= $maxSize && $error == 0) {
@@ -59,6 +59,9 @@ function getImage($imageData, $imageUrl) {
                 $image = @imagecreatefrompng($imageData['tmp_name']); // Supprimer le message d'erreur PHP
             } elseif ($extension === 'gif') {
                 $image = @imagecreatefromgif($imageData['tmp_name']); // Supprimer le message d'erreur PHP
+            } elseif ($extension === 'bmp') {
+                // La fonction imagecreatefrombmp() est une fonction personnalisée à créer pour prendre en charge les images BMP
+                $image = imagecreatefrombmp($imageData['tmp_name']); // Supprimer le message d'erreur PHP
             }
 
             if ($image) {
@@ -76,35 +79,11 @@ function getImage($imageData, $imageUrl) {
         } else {
             return "Conditions pour le téléchargement non remplies.";
         }
-    } elseif (!empty($imageUrl)) {
-        // Si une URL d'image est fournie
-        $extension = pathinfo($imageUrl, PATHINFO_EXTENSION);
-        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
-
-        // Vérification de l'extension de l'URL de l'image
-        if (in_array($extension, $allowedExtensions)) {
-            // Téléchargement de l'image depuis l'URL
-            $image = file_get_contents($imageUrl);
-            if ($image !== false) {
-                $uniqueName = uniqid();
-                $webpFile = $uploadDir . $uniqueName . ".webp";
-                if (file_put_contents($webpFile, $image) !== false) {
-                    return $webpFile;
-                } else {
-                    return "Erreur lors de l'écriture du fichier WebP.";
-                }
-            } else {
-                return "Erreur lors du téléchargement de l'image depuis l'URL.";
-            }
-        } else {
-            return "Extension de l'URL de l'image non valide.";
-        }
     } else {
-        return "Aucune image ni URL d'image fournies.";
+        return "Aucune image téléchargée.";
     }
-
-  
 }
+
 
 
 function render_products_product_add()
@@ -119,12 +98,13 @@ function render_products_product_add()
         // Sécurisation des données du formulaire
         $category = htmlspecialchars(strip_tags($_POST["category"]));
         $name = htmlspecialchars(strip_tags($_POST["name"]));
-        $description = htmlspecialchars(strip_tags($_POST["description"]));
+        $description = html_entity_decode($_POST["description"]);
         $price = floatval($_POST["price"]);
         $stock = intval($_POST["stock"]);
 
+
         // Récupération de l'image convertie en WebP
-        $image_path = getImage($_FILES["image"], $_POST["image_url"]);
+        $image_path = getImage($_FILES["image"]);
 
         // Vérification si un fichier d'image a été téléchargé et converti en WebP
         if ($image_path === false) {
@@ -241,7 +221,7 @@ function handle_product_modification($pdo, $product) {
     $image_path = "";
 
     // Récupération de l'image convertie en WebP
-    $image_path = getImage($_FILES["image"], $_POST["image_url"]);
+    $image_path = getImage($_FILES["image"]);
 
     // Traitement de l'image du produit
     if ($image_path === false) {
@@ -257,6 +237,7 @@ function handle_product_modification($pdo, $product) {
     header('Location: show_products');
     exit(); // Assure que le script s'arrête après la redirection
 }
+
 
 
 function handle_uploaded_image($image) {

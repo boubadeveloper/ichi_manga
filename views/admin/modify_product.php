@@ -19,7 +19,7 @@
 
                     <div class="mb-3">
                         <input type="file" class="form-control" id="image" name="image">
-                        <img src="<?php echo $product['image']; ?>" alt="Product Image" class="img-fluid mt-2" style="max-width: 200px;">
+                        <img src="<?php echo $product['image']; ?>" alt="Product Image" class="img-fluid mt-2" style="max-width: 200px;" >
                     </div>
 
                     <div class="mb-3">
