@@ -32,7 +32,7 @@ switch ($action) {
         
         break;
     case 'contact':
-        include 'contact.php';
+        include 'views/client/contact.php';
         break;
     default:
         header("Location: home_page");

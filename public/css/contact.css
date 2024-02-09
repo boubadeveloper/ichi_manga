@@ -1,24 +1,26 @@
-/* #submitButton
-{
-    background-color: var(--color-red-2);
-    color: var(--color-white);
-    cursor: pointer;
-}
-#submitButton:hover
-{
-    background-color: var(--color-red);
-}
-.form-floating .form-control
-{
-    box-shadow: none;
-    border: none;
-    border-bottom: 2px solid var(--color-dark);
-    border-radius: 0;
-}
-.form-floating .form-control.clicked
-{
-    box-shadow: none;
-    border: none;
-    border-bottom: 2px solid var(--color-red);
-    border-radius: 0;
-} */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Couleur de fond sombre */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée */
+  }
+  
+  .contact-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff; /* Texte en blanc */
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    border: 1px solid #555; /* Bordures plus sombres */
+    border-radius: 5px;
+    background-color: #fff; /* Couleur de fond des champs de saisie */
+    color: #fff; /* Texte en blanc */
+  }
+  
